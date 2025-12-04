@@ -120,7 +120,9 @@ Install dependencies: pip install torch torchvision
 
 Clone repo: git clone https://github.com/facebookresearch/segment-anything-2
 
-Download checkpoint: cd checkpoints && ./download_ckpts.sh
+Download checkpoint: 
+```bash
+cd checkpoints && ./download_ckpts.sh
 
 
 **7.2. Resource Links：**
