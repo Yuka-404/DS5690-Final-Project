@@ -30,7 +30,7 @@ Mask Decoder: This component fuses the Current Frame Embedding + Memory Context 
 
 
 
-# 3. Implementation &2 Demos
+# 3. Implementation & Demos
 
 **3.1. The Setup:** We use the sam2 Python library with the Hiera-Large checkpoint for maximum accuracy.
 
