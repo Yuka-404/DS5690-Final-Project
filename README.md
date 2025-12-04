@@ -123,7 +123,7 @@ Clone repo: git clone https://github.com/facebookresearch/segment-anything-2
 Download checkpoint: 
 ```bash
 cd checkpoints && ./download_ckpts.sh
-
+```
 
 **7.2. Resource Links：**
 
