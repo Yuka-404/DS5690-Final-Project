@@ -26,15 +26,15 @@ Memory Encoder: This module compresses current masks into "memory tokens" that a
 
 Mask Decoder: This component fuses the Current Frame Embedding + Memory Context + User Prompts (clicks) to predict the segmentation mask.
 
-**2.3. Zero-Shot Generalization** Leveraging "Foundation Model" theory, this project demonstrates Zero-Shot capabilities. We do not fine-tune the model on specific objects (like cars or people). Instead, we rely on its pre-trained "Promptable" nature to segment any object class based solely on geometric and texture cues.
+**2.3. Zero-Shot Generalization:** Leveraging "Foundation Model" theory, this project demonstrates Zero-Shot capabilities. We do not fine-tune the model on specific objects (like cars or people). Instead, we rely on its pre-trained "Promptable" nature to segment any object class based solely on geometric and texture cues.
 
 
 
 # 3. Implementation &2 Demos
 
-3.1. The Setup We use the sam2 Python library with the Hiera-Large checkpoint for maximum accuracy.
+**3.1. The Setup:** We use the sam2 Python library with the Hiera-Large checkpoint for maximum accuracy.
 
-3.2. Code Walkthrough
+**3.2. Code Walkthrough**
 ```
 import torch
 from sam2.build_sam import build_sam2_video_predictor
