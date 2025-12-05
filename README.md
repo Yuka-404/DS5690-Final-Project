@@ -24,7 +24,7 @@ We apply Transformer Attention mechanisms to the temporal dimension.
 
 - SAM 2: Implements "Streaming Memory Attention." It maintains a "Memory Bank" (FIFO Queue) of the object’s embeddings from past frames. When processing the current frame, the model attends to these past embeddings to resolve ambiguity.
 
-**2.2. Architecture Pipeline We utilize a unified pipeline consisting of three components:**
+**2.2. Architecture Pipeline:** We utilize a unified pipeline consisting of three components:**
 
 
 **Image Encoder (Hiera):** A hierarchical Vision Transformer that runs at ~44 FPS, converting video frames into feature maps.
