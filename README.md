@@ -156,12 +156,12 @@ We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three stand
 
 
 ![Zero-Shot Accuracy Graphs](./images/fig5.png)
+
 This figure compares the performance of SAM 2 against two strong baseline methods (SAM + XMem++ and SAM + Cutie) on zero-shot video segmentation tasks.
 
-- The Metrics (Y-Axis): The vertical axis represents the "average $\mathcal{J} \& \mathcal{F}$ over datasets." $\mathcal{J} \& \mathcal{F}$ is a standard metric for segmentation quality, where higher is better2222.
+- **The Metrics (Y-Axis):** The vertical axis represents the "average $\mathcal{J} \& \mathcal{F}$ over datasets." $\mathcal{J} \& \mathcal{F}$ is a standard metric for segmentation quality, where higher is better.
 
-- The Input (X-Axis): The horizontal axis shows the "number of annotated frames with 3-click." This simulates a user interacting with the video by clicking on objects to refine the mask. As the user annotates more frames (from 1 to 8), the model has more information to improve accuracy3.
-
+- **The Input (X-Axis):** The horizontal axis shows the "number of annotated frames with 3-click." This simulates a user interacting with the video by clicking on objects to refine the mask. As the user annotates more frames (from 1 to 8), the model has more information to improve accuracy.
 
 The Comparison:
 
