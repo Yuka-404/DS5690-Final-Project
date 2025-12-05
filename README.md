@@ -186,13 +186,13 @@ We analyzed the zero-shot performance of SAM 2 against strong baselines (SAM + X
 
 The Comparison:
 
-- SAM 2 (Blue Line): Consistently achieves the highest accuracy across all interaction steps in both settings. It starts higher and improves steadily as more frames are annotated4.
+- SAM 2 (Blue Line): Consistently achieves the highest accuracy across all interaction steps in both settings. It starts higher and improves steadily as more frames are annotated.
 
-- SAM + Cutie (Green Dotted Line): A strong baseline but consistently underperforms SAM 25.
+- SAM + Cutie (Green Dotted Line): A strong baseline but consistently underperforms SAM 2.
 
-- SAM + XMem++ (Orange Dashed Line): The lowest performing of the three, though it still improves with more interactions6.
+- SAM + XMem++ (Orange Dashed Line): The lowest performing of the three, though it still improves with more interactions.
 
-- Key Takeaway: SAM 2 provides significantly better segmentation accuracy with fewer interactions compared to state-of-the-art baselines7.
+- Key Takeaway: SAM 2 provides significantly better segmentation accuracy with fewer interactions compared to state-of-the-art baselines.
  
 
 **6.2.Impact of the Results:** 
