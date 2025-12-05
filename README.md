@@ -35,7 +35,6 @@ We apply Transformer Attention mechanisms to the temporal dimension.
 
 ![Mask Decoder Architecture](./images/fig8.png)
 
-This is the internal "brain" of the model that generates the masks. It closely follows the Transformer architecture mentioned in your syllabus.
 
 **Attention Mechanisms:** It uses Self-Attention (relating prompts to each other) and Cross-Attention (labeled "token to image attn" and "image to token attn") to mix the user's prompt with the image features.
 
