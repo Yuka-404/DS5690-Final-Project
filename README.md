@@ -60,7 +60,7 @@ The Decoder taking "Token embeddings" and "Hidden states" from the encoder to pr
 
 - Self-Attention ($X$ attending to $X$):
 
-Self-attention is defined as relating tokens within the same sequence to one another9. In SAM 2 (Figure 8), the block labeled "self attn." in Figure 8 allows the prompt tokens (e.g., if you click five times on a car) to communicate with each other. This helps the model understand that Click 1 and Click 2 are related parts of the same object.
+Self-attention is defined as relating tokens within the same sequence to one another. In SAM 2 (Figure 8), the block labeled "self attn." in Figure 8 allows the prompt tokens (e.g., if you click five times on a car) to communicate with each other. This helps the model understand that Click 1 and Click 2 are related parts of the same object.
 
 - Cross-Attention ($X$ attending to $Z$):
 
