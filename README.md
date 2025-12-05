@@ -155,22 +155,6 @@ We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three stand
 
 
 
-The Comparison:
-
-- SAM 2 (Blue Line): Consistently achieves the highest accuracy across all interaction steps in both settings. It starts higher and improves steadily as more frames are annotated4.
-
-- SAM + Cutie (Green Dotted Line): A strong baseline but consistently underperforms SAM 25.
-
-- SAM + XMem++ (Orange Dashed Line): The lowest performing of the three, though it still improves with more interactions6.
-
-- Key Takeaway: SAM 2 provides significantly better segmentation accuracy with fewer interactions compared to state-of-the-art baselines7.
-
-
-
-
-
-
-
 # 5. Model & Data Cards:
 **Model Name:** Segment Anything Model 2 (SAM 2)
 
@@ -185,8 +169,20 @@ The Comparison:
 
 **6.1.Revelations:** 
 
-We analyzed the zero-shot performance of SAM 2 against strong baselines (SAM + XMem++ and SAM + Cutie). As shown in Figure 5 below, SAM 2 consistently achieves higher segmentation quality across all interaction steps.
 
+We analyzed the zero-shot performance of SAM 2 against strong baselines (SAM + XMem++ and SAM + Cutie). As shown in Figure 5 below, SAM 2 consistently achieves higher segmentation quality across all interaction steps.
+![Zero-shot Accurancy](./images/fig5.png)
+
+The Comparison:
+
+- SAM 2 (Blue Line): Consistently achieves the highest accuracy across all interaction steps in both settings. It starts higher and improves steadily as more frames are annotated4.
+
+- SAM + Cutie (Green Dotted Line): A strong baseline but consistently underperforms SAM 25.
+
+- SAM + XMem++ (Orange Dashed Line): The lowest performing of the three, though it still improves with more interactions6.
+
+- Key Takeaway: SAM 2 provides significantly better segmentation accuracy with fewer interactions compared to state-of-the-art baselines7.
+ 
 
 **6.2.Impact of the Results:** 
 The quantitative results reveal a significant advancement in handling complex video scenarios:
@@ -201,17 +197,17 @@ This table suggests that the Memory Attention mechanism is the key differentiato
 
 **6.3. Limitations & Future Directions:** 
 
-**Addressing Current Limitations:**  As noted, the model struggles with "ID Switching" in crowded scenes (e.g., similar-looking people) and thin, fast-moving objects due to motion blur. A future step is to implement temporal smoothing post-processing to reduce jitter in these edge cases.
+- Addressing Current Limitations: As noted, the model currently struggles with "ID Switching" in crowded scenes (e.g., similar-looking people) and thin, fast-moving objects due to motion blur. A future step is to implement temporal smoothing post-processing to reduce jitter in these edge cases.
 
-**Domain-Specific Fine-Tuning:**  While SAM 2 is a generalist model, it can be fine-tuned for specialized tasks. The next logical step is to train the model on medical datasets (e.g., tracking tumors in ultrasound video) or autonomous driving footage to improve reliability in safety-critical environments.
+- Domain-Specific Fine-Tuning: While SAM 2 is a generalist model, it can be fine-tuned for specialized tasks. The next logical step is to train the model on medical datasets (e.g., tracking tumors in ultrasound video) or autonomous driving footage to improve reliability in safety-critical environments.
 
-**Edge Deployment:**  Currently, the model requires significant GPU power (Hiera-Large). Future work involves quantizing the model (reducing precision from float32 to int8) to allow it to run in real-time on mobile devices and edge cameras.
+- Edge Deployment: Currently, the model requires significant GPU power (Hiera-Large). Future work involves quantizing the model (reducing precision from float32 to int8) to allow it to run in real-time on mobile devices and edge cameras.
 
 
 
 # 7. Conclusion: 
 
-This project demonstrates that SAM 2 successfully bridges the gap between static image segmentation and dynamic video processing. By treating video as a continuous stream rather than isolated 3D blocks, the Memory Attention mechanism solves the long-standing challenge of "Temporal Inconsistency," allowing the model to track objects even when they rotate, change lighting, or disappear behind occlusions. Our evaluation confirms that SAM 2 outperforms strong baselines like SAM+XMem++ and SAM+Cutie, achieving a 90.7% $\mathcal{J} \& \mathcal{F}$ score on DAVIS 2017 and a critical 6.2% improvement on the complex MOSE dataset. Ultimately, by unifying the architecture for both images and video, SAM 2 democratizes high-end visual effects and opens new possibilities for real-time robotic perception and automated video editing.
+This project demonstrates that SAM 2 successfully bridges the gap between static image segmentation and dynamic video processing. By treating video as a continuous stream rather than isolated 3D blocks, the Memory Attention mechanism solves the long-standing challenge of "Temporal Inconsistency," allowing the model to track objects even when they rotate, change lighting, or disappear behind occlusions. Our evaluation confirms that SAM 2 outperforms strong baselines like SAM+XMem++ and SAM+Cutie, achieving a 90.7% J&F score (Jaccard & F-measure) on DAVIS 2017 and a critical 6.2% improvement on the complex MOSE dataset. Ultimately, by unifying the architecture for both images and video, SAM 2 democratizes high-end visual effects and opens new possibilities for real-time robotic perception and automated video editing.
 
 
 # 8. Documentation & Resource Links:
