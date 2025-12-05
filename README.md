@@ -118,7 +118,7 @@ for out_frame_idx, out_obj_ids, out_mask_logits in predictor.propagate_in_video(
 # 4. Assessment & Evaluation:
 
 
-** 4.1.Model Version & Architecture:** 
+**4.1.Model Version & Architecture:** 
 - Version: SAM 2 (and SAM 2.1).
 
 - Architecture:  A unified Transformer architecture with a streaming memory mechanism for real-time video processing.
@@ -134,7 +134,7 @@ Mask Decoder:  Generates segmentation masks based on user prompts (clicks/boxes)
 We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three standard industry datasets to prove reliability.
 
 
-** 4.2. Intended Uses & License:**
+**4.2. Intended Uses & License:**
 
 - Primary Use: Promptable visual segmentation for images and videos (e.g., visual editing, robotic perception, data annotation).
 
@@ -145,7 +145,7 @@ We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three stand
 - Prohibited Uses:*Surveillance, military applications, or generating biometric/sensitive personal data without consent.
 
 
-** 4.3. Ethical & Bias Considerations:** 
+**4.3. Ethical & Bias Considerations:** 
 
 - Fairness Evaluation: The authors conducted a fairness evaluation on the SA-V dataset and found minimal performance discrepancy across perceived gender and age groups.
 
