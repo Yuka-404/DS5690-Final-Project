@@ -155,14 +155,6 @@ We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three stand
 
 
 
-![Zero-Shot Accuracy Graphs](./images/fig5.png)
-
-This figure compares the performance of SAM 2 against two strong baseline methods (SAM + XMem++ and SAM + Cutie) on zero-shot video segmentation tasks.
-
-- **The Metrics (Y-Axis):** The vertical axis represents the "average $\mathcal{J} \& \mathcal{F}$ over datasets." $\mathcal{J} \& \mathcal{F}$ is a standard metric for segmentation quality, where higher is better.
-
-- **The Input (X-Axis):** The horizontal axis shows the "number of annotated frames with 3-click." This simulates a user interacting with the video by clicking on objects to refine the mask. As the user annotates more frames (from 1 to 8), the model has more information to improve accuracy.
-
 The Comparison:
 
 - SAM 2 (Blue Line): Consistently achieves the highest accuracy across all interaction steps in both settings. It starts higher and improves steadily as more frames are annotated4.
@@ -174,14 +166,7 @@ The Comparison:
 - Key Takeaway: SAM 2 provides significantly better segmentation accuracy with fewer interactions compared to state-of-the-art baselines7.
 
 
-| Dataset | Focus | SAM 2 Score (J&F) | vs. Previous Best |
-| :--- | :--- | :--- | :--- |
-| **DAVIS 2017** | Standard Benchmark | **90.7%** | +2.6% Improvement |
-| **MOSE** | **Complex Occlusions** | **77.9%** | **+6.2% Improvement** |
-| **YouTube-VOS** | Diverse Videos | **89.3%** | +1.8% Improvement |
 
-
-The MOSE result is the most critical. MOSE (Complex Video Object Segmentation) specifically tests objects disappearing and reappearing. A 6.2% jump in accuracy here empirically proves that the Memory Attention methodology works better than previous approaches.
 
 
 
@@ -198,15 +183,35 @@ The MOSE result is the most critical. MOSE (Complex Video Object Segmentation) s
 
 # 6. Critical Analysis:
 
-**6.1. Impact:** The End of Rotoscoping This project reveals that manual video segmentation (rotoscoping), which historically took Hollywood studios weeks, is now a solved problem solvable in seconds. This lowers the barrier to entry for high-end VFX.
+**6.1.Revelations:** 
 
-**6.2. Technical Insight:** Memory is Key The success of SAM 2 suggests that for Video AI, Architecture (Memory mechanisms) is more important than just Scale (more data). The ability to "remember" past tokens is what solves the occlusion problem, not just training on more videos.
+We analyzed the zero-shot performance of SAM 2 against strong baselines (SAM + XMem++ and SAM + Cutie). As shown in Figure 5 below, SAM 2 consistently achieves higher segmentation quality across all interaction steps.
 
-**6.3. Limitations:** The model still struggles with "ID Switching" in crowded scenes (e.g., confusing two similar-looking people wearing the same shirt) and extremely thin, fast-moving objects (like spinning wheels) due to motion blur.
+
+**6.2.Impact of the Results:** 
+The quantitative results reveal a significant advancement in handling complex video scenarios:
+
+| Dataset | Focus | SAM 2 Score (J&F) | vs. Previous Best |
+| :--- | :--- | :--- | :--- |
+| **DAVIS 2017** | Standard Benchmark | **90.7%** | +2.6% Improvement |
+| **MOSE** | **Complex Occlusions** | **77.9%** | **+6.2% Improvement** |
+| **YouTube-VOS** | Diverse Videos | **89.3%** | +1.8% Improvement |
+
+This table suggests that the Memory Attention mechanism is the key differentiator. The 6.2% improvement on the MOSE dataset (which focuses on disappearing/reappearing objects) empirically proves that SAM 2's memory bank handles occlusions significantly better than previous state-of-the-art methods.
+
+**6.3. Limitations & Future Directions:** 
+
+**Addressing Current Limitations:**  As noted, the model struggles with "ID Switching" in crowded scenes (e.g., similar-looking people) and thin, fast-moving objects due to motion blur. A future step is to implement temporal smoothing post-processing to reduce jitter in these edge cases.
+
+**Domain-Specific Fine-Tuning:**  While SAM 2 is a generalist model, it can be fine-tuned for specialized tasks. The next logical step is to train the model on medical datasets (e.g., tracking tumors in ultrasound video) or autonomous driving footage to improve reliability in safety-critical environments.
+
+**Edge Deployment:**  Currently, the model requires significant GPU power (Hiera-Large). Future work involves quantizing the model (reducing precision from float32 to int8) to allow it to run in real-time on mobile devices and edge cameras.
+
+
 
 # 7. Conclusion: 
 
-【need to edit】
+This project demonstrates that SAM 2 successfully bridges the gap between static image segmentation and dynamic video processing. By treating video as a continuous stream rather than isolated 3D blocks, the Memory Attention mechanism solves the long-standing challenge of "Temporal Inconsistency," allowing the model to track objects even when they rotate, change lighting, or disappear behind occlusions. Our evaluation confirms that SAM 2 outperforms strong baselines like SAM+XMem++ and SAM+Cutie, achieving a 90.7% $\mathcal{J} \& \mathcal{F}$ score on DAVIS 2017 and a critical 6.2% improvement on the complex MOSE dataset. Ultimately, by unifying the architecture for both images and video, SAM 2 democratizes high-end visual effects and opens new possibilities for real-time robotic perception and automated video editing.
 
 
 # 8. Documentation & Resource Links:
