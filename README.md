@@ -76,7 +76,7 @@ The cross-attention (often in Encoder-Decoder blocks) is where the query comes f
 
 The "Positional embeds" are added to token embeddings so the model knows the order of words. Standard Transformers use absolute positions ($1, 2, 3...$). And SAM 2 uses Rotary Positional Embeddings (RoPE) (specifically 2D-RoPE) for its memory attention.
 
-- Why it matters: Standard embeddings struggle when sequence lengths change (like in long videos). RoPE (a concept likely covered in your "Llama 3.2 Deep-Dive" unit) encodes relative positions using rotation matrices. This allows SAM 2 to understand that "Frame 50 is 10 frames after Frame 40," regardless of how long the video is, facilitating the "Streaming Memory" architecture.
+- Why it matters: Standard embeddings struggle when sequence lengths change (like in long videos). RoPE encodes relative positions using rotation matrices. This allows SAM 2 to understand that "Frame 50 is 10 frames after Frame 40," regardless of how long the video is, facilitating the "Streaming Memory" architecture.
   
 
 # 3. Implementation & Demos
