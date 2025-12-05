@@ -44,7 +44,7 @@ This is the internal "brain" of the model that generates the masks. It closely f
 **2.3. Dataset-Driven Validation:** 
 To ensure reliability, we validate this methodology using the SA-V (Segment Anything Video) dataset logic. We test the model's ability to handle "Disappearance/Reappearance" events, which occur in 42.5% of SA-V tracks, ensuring our approach works in the real world.
 
-**2.4. Connecting to "Transformer Components" & "Architecture": **
+**2.4. Connecting to "Transformer Components" & "Architecture":**
 
 **-The Encoder (Hiera):**
 
@@ -58,7 +58,7 @@ The Decoder taking "Token embeddings" and "Hidden states" from the encoder to pr
 **2.5. Connecting to "Formal Algorithms" (Attention Mechanisms):**
 
 
-** - Self-Attention ($X$ attending to $X$):C**
+** - Self-Attention ($X$ attending to $X$):**
 
 Self-attention is defined as relating tokens within the same sequence to one another9. In SAM 2 (Figure 8), the block labeled "self attn." in Figure 8 allows the prompt tokens (e.g., if you click five times on a car) to communicate with each other. This helps the model understand that Click 1 and Click 2 are related parts of the same object.
 
@@ -146,7 +146,7 @@ We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three stand
 
 ** 4.3. Ethical & Bias Considerations: ** 
 
-** Fairness Evaluation: **The authors conducted a fairness evaluation on the SA-V dataset and found minimal performance discrepancy across perceived gender and age groups.
+** Fairness Evaluation:** The authors conducted a fairness evaluation on the SA-V dataset and found minimal performance discrepancy across perceived gender and age groups.
 
 ** - Geographic Diversity:** The training data (SA-V) includes videos from 47 countries to ensure the model generalizes well across different global environments.
 
@@ -159,7 +159,7 @@ This figure compares the performance of SAM 2 against two strong baseline method
 
 **The Metrics (Y-Axis):** The vertical axis represents the "average $\mathcal{J} \& \mathcal{F}$ over datasets." $\mathcal{J} \& \mathcal{F}$ is a standard metric for segmentation quality, where higher is better2222.
 
-**The Input (X-Axis):**The horizontal axis shows the "number of annotated frames with 3-click." This simulates a user interacting with the video by clicking on objects to refine the mask. As the user annotates more frames (from 1 to 8), the model has more information to improve accuracy3.
+**The Input (X-Axis):** The horizontal axis shows the "number of annotated frames with 3-click." This simulates a user interacting with the video by clicking on objects to refine the mask. As the user annotates more frames (from 1 to 8), the model has more information to improve accuracy3.
 
 **The Comparison:**
 
@@ -167,7 +167,7 @@ This figure compares the performance of SAM 2 against two strong baseline method
 
 **- SAM + Cutie (Green Dotted Line):** A strong baseline but consistently underperforms SAM 25.
 
-**- SAM + XMem++ (Orange Dashed Line): ** The lowest performing of the three, though it still improves with more interactions6.
+**- SAM + XMem++ (Orange Dashed Line):** The lowest performing of the three, though it still improves with more interactions6.
 
 **Key Takeaway:** SAM 2 provides significantly better segmentation accuracy with fewer interactions compared to state-of-the-art baselines7.
 
@@ -239,7 +239,7 @@ cd ..
 ```
 
 
-**8.2. Resource Links: **
+**8.2. Resource Links:**
 
 Primary Paper: Ravi, N., et al. (2024). SAM 2: Segment Anything in Images and Videos. Meta FAIR.\
 https://arxiv.org/pdf/2408.00714
