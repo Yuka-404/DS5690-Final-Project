@@ -48,7 +48,7 @@ To ensure reliability, we validate this methodology using the SA-V (Segment Anyt
 
 - The Encoder (Hiera):
 
-The Encoder takes raw input (like text tokens) and creates "Hidden states" or context. AndSAM 2 uses a Hierarchical Vision Transformer (Hiera) as its Image Encoder. Instead of tokenizing text, it tokenizes the video frame pixels. Just like the Encoder in your slide's Figure 3-1, it processes the input once to create a rich feature representation (embedding) that the decoder can query later.
+The Encoder takes raw input (like text tokens) and creates "Hidden states" or context. And SAM 2 uses a Hierarchical Vision Transformer (Hiera) as its Image Encoder. Instead of tokenizing text, it tokenizes the video frame pixels. Just like the Encoder in your slide's Figure 3-1, it processes the input once to create a rich feature representation (embedding) that the decoder can query later.
 
 - The Decoder (Mask Decoder):
 
