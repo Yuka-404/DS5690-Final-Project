@@ -46,11 +46,11 @@ To ensure reliability, we validate this methodology using the SA-V (Segment Anyt
 
 **2.4. Connecting to "Transformer Components" & "Architecture":**
 
-**-The Encoder (Hiera):**
+- The Encoder (Hiera):
 
 The Encoder takes raw input (like text tokens) and creates "Hidden states" or context. AndSAM 2 uses a Hierarchical Vision Transformer (Hiera) as its Image Encoder. Instead of tokenizing text, it tokenizes the video frame pixels. Just like the Encoder in your slide's Figure 3-1, it processes the input once to create a rich feature representation (embedding) that the decoder can query later.
 
-** - The Decoder (Mask Decoder):**
+- The Decoder (Mask Decoder):
 
 The Decoder taking "Token embeddings" and "Hidden states" from the encoder to predict the "Next word". And SAM 2's Mask Decoder (Figure 8) takes the image embeddings (from the encoder) and user prompts (clicks/boxes). Instead of predicting the "next word," it predicts the "mask."
 
@@ -58,19 +58,19 @@ The Decoder taking "Token embeddings" and "Hidden states" from the encoder to pr
 **2.5. Connecting to "Formal Algorithms" (Attention Mechanisms):**
 
 
-** - Self-Attention ($X$ attending to $X$):**
+- Self-Attention ($X$ attending to $X$):
 
 Self-attention is defined as relating tokens within the same sequence to one another9. In SAM 2 (Figure 8), the block labeled "self attn." in Figure 8 allows the prompt tokens (e.g., if you click five times on a car) to communicate with each other. This helps the model understand that Click 1 and Click 2 are related parts of the same object.
 
-** - Cross-Attention ($X$ attending to $Z$):**
+- Cross-Attention ($X$ attending to $Z$):
 
 The cross-attention (often in Encoder-Decoder blocks) is where the query comes from one sequence and keys/values come from another.In SAM 2 (Figure 8), the blocks labeled "token to image attn" and "image to token attn" are Cross-Attention layers.
 
-Query ($Q$): The user prompts (tokens).
+- Query ($Q$): The user prompts (tokens).
 
-Key/Value ($K, V$): The image embeddings from the Image Encoder.
+- Key/Value ($K, V$): The image embeddings from the Image Encoder.
 
-This is how the model "looks" at the specific part of the image you asked about.
+- This is how the model "looks" at the specific part of the image you asked about.
 
 
 **2.6. Connecting to "Positional Embeddings" (RoPE):**
