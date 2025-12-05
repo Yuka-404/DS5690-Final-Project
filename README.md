@@ -70,7 +70,6 @@ The cross-attention (often in Encoder-Decoder blocks) is where the query comes f
 
 - Key/Value ($K, V$): The image embeddings from the Image Encoder.
 
-- This is how the model "looks" at the specific part of the image you asked about.
 
 
 **2.6. Connecting to "Positional Embeddings" (RoPE):**
