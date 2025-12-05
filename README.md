@@ -151,7 +151,7 @@ We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three stand
 
 - Dataset License: The SA-V dataset is released under CC BY 4.0.
 
-- Prohibited Uses:*Surveillance, military applications, or generating biometric/sensitive personal data without consent.
+- Prohibited Uses: Surveillance, military applications, or generating biometric/sensitive personal data without consent.
 
 
 **4.3. Ethical & Bias Considerations:** 
