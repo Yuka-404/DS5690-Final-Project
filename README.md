@@ -20,9 +20,9 @@ This graph illustrates the Promptable Visual Segmentation (PVS) task, showing ho
 
 We apply Transformer Attention mechanisms to the temporal dimension.
 
-**Standard Transformers:** Attend to all words in a sentence.
+- Standard Transformers: Attend to all words in a sentence.
 
-**SAM 2:** Implements "Streaming Memory Attention." It maintains a "Memory Bank" (FIFO Queue) of the object’s embeddings from past frames. When processing the current frame, the model attends to these past embeddings to resolve ambiguity.
+- SAM 2: Implements "Streaming Memory Attention." It maintains a "Memory Bank" (FIFO Queue) of the object’s embeddings from past frames. When processing the current frame, the model attends to these past embeddings to resolve ambiguity.
 
 **2.2. Architecture Pipeline We utilize a unified pipeline consisting of three components:**
 
@@ -32,6 +32,7 @@ We apply Transformer Attention mechanisms to the temporal dimension.
 **Memory Encoder:** Compresses the current mask prediction into a lightweight "memory token" and stores it.
 
 **Mask Decoder:** Fuses the Current Frame + Memory Context + User Clicks to generate the final mask.
+
 ![Mask Decoder Architecture](./images/fig8.png)
 
 This is the internal "brain" of the model that generates the masks. It closely follows the Transformer architecture mentioned in your syllabus.
@@ -144,7 +145,7 @@ We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three stand
 - Prohibited Uses:*Surveillance, military applications, or generating biometric/sensitive personal data without consent.
 
 
-** 4.3. Ethical & Bias Considerations: ** 
+** 4.3. Ethical & Bias Considerations:** 
 
 - Fairness Evaluation: The authors conducted a fairness evaluation on the SA-V dataset and found minimal performance discrepancy across perceived gender and age groups.
 
