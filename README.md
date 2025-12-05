@@ -134,7 +134,7 @@ Explanation:
 
 - Core Components:
 
-Image Encoder:  Uses a Hiera (Hierarchical Vision Transformer) backbone to process frames.
+Image Encoder: Uses a Hiera (Hierarchical Vision Transformer) backbone to process frames.
 
 Memory Attention: Allows the model to attend to past frame features and predictions stored in a Memory Bank (FIFO queue).
 
