@@ -84,7 +84,7 @@ The "Positional embeds" are added to token embeddings so the model knows the ord
 
 **3.1. The Setup:** We use the sam2 Python library with the Hiera-Large checkpoint for maximum accuracy.
 
-**3.2. Code Walkthrough: **
+**3.2. Code Walkthrough:**
 ```
 import torch
 from sam2.build_sam import build_sam2_video_predictor
@@ -118,58 +118,59 @@ for out_frame_idx, out_obj_ids, out_mask_logits in predictor.propagate_in_video(
 
 
 ** 4.1.Model Version & Architecture:** 
-** Version:**  SAM 2 (and SAM 2.1).
+- Version: SAM 2 (and SAM 2.1).
 
-** Architecture:**  A unified Transformer architecture with a streaming memory mechanism for real-time video processing.
+- Architecture:  A unified Transformer architecture with a streaming memory mechanism for real-time video processing.
 
-** Core Components:** 
+- Core Components:
 
-** - Image Encoder:**  Uses a Hiera (Hierarchical Vision Transformer) backbone to process frames.
+Image Encoder:  Uses a Hiera (Hierarchical Vision Transformer) backbone to process frames.
 
-** - Memory Attention:**  Allows the model to attend to past frame features and predictions stored in a Memory Bank (FIFO queue).
+Memory Attention: Allows the model to attend to past frame features and predictions stored in a Memory Bank (FIFO queue).
 
-**  - Mask Decoder:**  Generates segmentation masks based on user prompts (clicks/boxes) and memory context.
+Mask Decoder:  Generates segmentation masks based on user prompts (clicks/boxes) and memory context.
 
 We evaluate SAM 2 against previous State-of-the-Art (SOTA) models on three standard industry datasets to prove reliability.
 
 
 ** 4.2. Intended Uses & License:**
 
-** - Primary Use:** Promptable visual segmentation for images and videos (e.g., visual editing, robotic perception, data annotation).
+- Primary Use: Promptable visual segmentation for images and videos (e.g., visual editing, robotic perception, data annotation).
 
-** - License:** Released under the permissive Apache 2.0 License.
+- License: Released under the permissive Apache 2.0 License.
 
-** - Dataset License:** The SA-V dataset is released under CC BY 4.0.
+- Dataset License: The SA-V dataset is released under CC BY 4.0.
 
-** - Prohibited Uses:** Surveillance, military applications, or generating biometric/sensitive personal data without consent.
+- Prohibited Uses:*Surveillance, military applications, or generating biometric/sensitive personal data without consent.
 
 
 ** 4.3. Ethical & Bias Considerations: ** 
 
-** Fairness Evaluation:** The authors conducted a fairness evaluation on the SA-V dataset and found minimal performance discrepancy across perceived gender and age groups.
+- Fairness Evaluation: The authors conducted a fairness evaluation on the SA-V dataset and found minimal performance discrepancy across perceived gender and age groups.
 
-** - Geographic Diversity:** The training data (SA-V) includes videos from 47 countries to ensure the model generalizes well across different global environments.
+- Geographic Diversity: The training data (SA-V) includes videos from 47 countries to ensure the model generalizes well across different global environments.
 
-** - Limitations:** The model may still reflect biases present in the training data, and users are advised to perform their own fairness evaluations for specific use cases.
+- Limitations: The model may still reflect biases present in the training data, and users are advised to perform their own fairness evaluations for specific use cases.
 
 
 
 ![Zero-Shot Accuracy Graphs](./images/fig5.png)
 This figure compares the performance of SAM 2 against two strong baseline methods (SAM + XMem++ and SAM + Cutie) on zero-shot video segmentation tasks.
 
-**The Metrics (Y-Axis):** The vertical axis represents the "average $\mathcal{J} \& \mathcal{F}$ over datasets." $\mathcal{J} \& \mathcal{F}$ is a standard metric for segmentation quality, where higher is better2222.
+- The Metrics (Y-Axis): The vertical axis represents the "average $\mathcal{J} \& \mathcal{F}$ over datasets." $\mathcal{J} \& \mathcal{F}$ is a standard metric for segmentation quality, where higher is better2222.
 
-**The Input (X-Axis):** The horizontal axis shows the "number of annotated frames with 3-click." This simulates a user interacting with the video by clicking on objects to refine the mask. As the user annotates more frames (from 1 to 8), the model has more information to improve accuracy3.
+- The Input (X-Axis): The horizontal axis shows the "number of annotated frames with 3-click." This simulates a user interacting with the video by clicking on objects to refine the mask. As the user annotates more frames (from 1 to 8), the model has more information to improve accuracy3.
 
-**The Comparison:**
 
-**- SAM 2 (Blue Line):** Consistently achieves the highest accuracy across all interaction steps in both settings. It starts higher and improves steadily as more frames are annotated4.
+The Comparison:
 
-**- SAM + Cutie (Green Dotted Line):** A strong baseline but consistently underperforms SAM 25.
+- SAM 2 (Blue Line): Consistently achieves the highest accuracy across all interaction steps in both settings. It starts higher and improves steadily as more frames are annotated4.
 
-**- SAM + XMem++ (Orange Dashed Line):** The lowest performing of the three, though it still improves with more interactions6.
+- SAM + Cutie (Green Dotted Line): A strong baseline but consistently underperforms SAM 25.
 
-**Key Takeaway:** SAM 2 provides significantly better segmentation accuracy with fewer interactions compared to state-of-the-art baselines7.
+- SAM + XMem++ (Orange Dashed Line): The lowest performing of the three, though it still improves with more interactions6.
+
+- Key Takeaway: SAM 2 provides significantly better segmentation accuracy with fewer interactions compared to state-of-the-art baselines7.
 
 
 | Dataset | Focus | SAM 2 Score (J&F) | vs. Previous Best |
