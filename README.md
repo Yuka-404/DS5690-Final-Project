@@ -115,6 +115,17 @@ for out_frame_idx, out_obj_ids, out_mask_logits in predictor.propagate_in_video(
     show_mask(out_mask_logits, out_frame_idx)
 ```
 
+Explanation:
+
+- Model Initialization: We load the sam2_hiera_large checkpoint. This loads the Hiera (Hierarchical) image encoder weights, which allows the model to understand visual features at 44 FPS.
+
+- State Management: The init_state function processes the video frames into embeddings. This creates the initial "Memory Bank" structure (FIFO queue) referenced in the methodology.
+
+- Prompting: The add_new_points function simulates user interaction. Here, we provide a single positive click (labels=[1]) at specific coordinates on Frame 0. The model uses the Mask Decoder to generate an initial mask for the object at this frame.
+
+- Temporal Propagation: The propagate_in_video loop is where the Memory Attention kicks in. It iterates through the remaining video frames. For every new frame, it queries the memory of the object from Frame 0 (and subsequent frames) to predict where the object has moved, handling occlusions and rotation automatically.
+
+
 # 4. Assessment & Evaluation:
 
 
